@@ -47,17 +47,21 @@
 
 				<div class="col-md-12 col-xs-12 login_control">
 
+					
 					<div class="control">
-						<div class="label">Email Address</div>
-						<h:inputText type="text" class="form-control" value="#{loginBean.userName}" />
+						<div class="label">Kullanıcı Adı</div>
+						<h:inputText type="text" class="form-control"
+							value="#{loginBean.userName}" />
 					</div>
 
 					<div class="control">
 						<div class="label">Password</div>
-						<h:inputSecret type="password" class="form-control" value="#{loginBean.password}" />
+						<h:inputSecret type="password" class="form-control"
+							value="#{loginBean.password}" />
 					</div>
 					<div align="center">
-						<h:commandButton class="btn btn-orange" value="Giriş" action="#{loginBean.giris}" />
+						<h:commandButton class="btn btn-orange" value="Giriş"
+							action="#{loginBean.giris}" />
 					</div>
 
 				</div>
