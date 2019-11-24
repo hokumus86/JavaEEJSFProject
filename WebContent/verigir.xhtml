@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Veri Giriş sayfası</title>
+
+
+
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/bootstrap/dist/css/bootstrap.min.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/font-awesome/css/font-awesome.min.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/nprogress/nprogress.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/iCheck/skins/flat/green.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/jqvmap/dist/jqvmap.min.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/vendors/bootstrap-daterangepicker/daterangepicker.css?ln=css" />
+	<link type="text/css" rel="stylesheet"
+		href="resources/build/css/custom.min.css?ln=css" />
+</h:head>
+<h:body>
+	<h:form id="frmveri">
+	
+		<div >
+			<h:commandButton id="btnurl" type="submit" value="URL ver"
+				onclick="#{verigirmbean.veriGirildi()}" />
+			<h:inputText id="txturl" value="#{verigirmbean.name}" />
+
+		</div>
+		<div class="control">
+			<div class="label">İsim</div>
+			<h:inputText type="text" class="form-control"
+				value="#{verigirmbean.name}" />
+		</div>
+
+		<div class="control">
+			<div class="label">veri</div>
+			<h:inputSecret type="password" class="form-control"
+				value="#{verigirmbean.data}" />
+		</div>
+		<div align="center">
+			<h:commandButton class="btn btn-orange" value="Veri Kaydet"
+				onclick="veriF(hüseyin)" />
+		</div>
+
+
+<script>
+ function veriF(name) {
+	 document.getElementById("frmveri:txturl").value = name;
+	 document.getElementById("frmveri:btnurl").click();
+	
+}
+</script>
+	</h:form>
+
+
+</h:body>
+</html>

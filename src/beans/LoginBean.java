@@ -5,8 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
@@ -19,6 +21,10 @@ import model.Rol;
 @SessionScoped
 public class LoginBean implements Serializable {
 
+	
+	public LoginBean() {
+		System.out.println("logine geldi");
+	}
 	/**
 	 * 
 	 */

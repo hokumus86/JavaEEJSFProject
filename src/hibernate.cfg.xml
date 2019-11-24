@@ -43,7 +43,7 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5435/satinalma</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/satinalma</property>
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">root</property>
     
@@ -51,6 +51,8 @@ Contributor(s):
     <property name="hibernate.show_sql">true</property>    
     
     <mapping  class="model.Kullanici"/>
-     <mapping  class="model.logtbl"/>
+    <mapping  class="model.logtbl"/>
+    <mapping  class="model.tblcategori"/>
+    <mapping  class="model.tblurun"/>
   </session-factory>
 </hibernate-configuration>

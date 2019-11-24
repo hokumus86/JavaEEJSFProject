@@ -6,6 +6,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class AdminIndexBean {
+	public AdminIndexBean() {
+		System.out.println("geldi");
+	}
 	private int id=1;
 	private String url="kategori.xhtml";
 	public int getId() {
