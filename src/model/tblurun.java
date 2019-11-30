@@ -21,7 +21,7 @@ public class tblurun {
 	private String aciklama;
 	private int kategori_id;
 	private String kategoriadi;
-	private String fiyat;
+	private int fiyat;
 	int sil_id;
 	
 	
@@ -38,10 +38,10 @@ public class tblurun {
 	public void setKategori_id(int kategori_id) {
 		this.kategori_id = kategori_id;
 	}
-	public String getFiyat() {
+	public int getFiyat() {
 		return fiyat;
 	}
-	public void setFiyat(String fiyat) {
+	public void setFiyat(int fiyat) {
 		this.fiyat = fiyat;
 	}
 	public int getSil_id() {

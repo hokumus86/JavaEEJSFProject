@@ -10,7 +10,7 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <div class="hide kaydetmeislemi">
-<h:commandButton id="btnurunkaydet" actionListener="#{urunBean.kaydet}"
+<h:commandButton id="btnurunkaydet" actionListener="#{urunBean.ekle}"
 			class="btn btn-primary" style="float:right" value="Kaydet" />
  <h:commandButton id="btnurunsil" class="btn btn-primary" value="Sil" actionListener="#{urunBean.sil}"/>
 </div>
@@ -33,7 +33,7 @@
 							<div class="form-group col-md-6">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Ürün Adı</label>
 								<div class="col-md-9 col-sm-9 col-xs-12 form-group has-feedback">
-									<h:inputText value="#{urunBean.ad}" type="text" class="form-control has-feedback-left"
+									<h:inputText value="#{urunBean.urunAdi}" type="text" class="form-control has-feedback-left"
 										id="txtuadi" placeholder="Ürün adı gir..." 
 										onkeyup="this.value=this.value.replace(/[^ ' 'a-z.,A-ZüÜğĞİçÇöÖşŞı]/g,'');" />
 									<span class="fa fa-tags form-control-feedback left"
@@ -46,7 +46,7 @@
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Ürün
 									Fiyatı</label>
 								<div class="col-md-9 col-sm-9 col-xs-12 form-group has-feedback">
-									<h:inputText value="#{urunBean.fiyat}" type="text" class="form-control has-feedback-left"
+									<h:inputText value="#{urunBean.urunFiyati}" type="text" class="form-control has-feedback-left"
 										id="txtufiyati" placeholder="Ürün Fiyatını gir..." 
 										onkeyup="var pos=this.selectionStart;
 									var size = this.value.length;	
@@ -75,7 +75,7 @@
 							            
 							            <f:selectItem itemLabel="Bir Kayıt Seçmelisiniz..." />
 							           
-							            <f:selectItems value="#{urunBean.listeC}" var="liste"
+							             <f:selectItems value="#{UrunBean.listeC}" var="liste"
 							            itemLabel="#{liste.ad}" itemValue="#{liste.id}"/>
 							        
 							        </h:selectOneMenu>
@@ -200,7 +200,7 @@
 
 
 					<div class="x_title">
-						<h2>Kategori Listesi Tablosu</h2>
+						<h2>Urun Listesi Tablosu</h2>
 						<ul class="nav navbar-right panel_toolbox">
 							<li><a class="btn" onclick="yenikayit()"> <img
 									src="../resources/images/add.png" />
@@ -230,7 +230,7 @@
 							<tbody>
 
 
-								<ui:repeat var="ls" value="#{urunBean.listem}">
+								<ui:repeat var="ls" value="#{urunBean.urunList}">
 								
 								
 								<tr class="even pointer">
@@ -238,7 +238,7 @@
 									<td class="width:%10">#{ls.id}</td>
 									<td class="width:%80">#{ls.kategoriadi}</td>
 									<td class="width:%80">#{ls.ad}</td>
-									<td class="width:%80">#{ls.fiyat} tl</td>
+									<td class="width:%80">#{ls.fiyat}</td>
 									
 									<td class="width:%10">
 										<div>
