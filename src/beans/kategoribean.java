@@ -15,7 +15,7 @@ public class kategoribean {
 
 	private String kategoriadi;
 	private List<tblcategori> klist = new ArrayList<>();
-	private int silnecekid=0;
+	private int silinecekid=0;
 	tblCatDAO db = new tblCatDAO();
 	
 	public void ekle() {
@@ -29,20 +29,22 @@ public class kategoribean {
 
 	public void sil() {
 		
-		if(silnecekid!=0) {
-			//db.(silnecekid);			
+		if(silinecekid!=0) {
+			//db.(silinecekid);	
+			tblcategori s = new tblcategori();
+			s.setId(silinecekid);
+			db.sil(s);
 		}
 		
 	}
 	
 	
-	
-	public int getSilnecekid() {
-		return silnecekid;
+	public int getSilinecekid() {
+		return silinecekid;
 	}
 
-	public void setSilnecekid(int silnecekid) {
-		this.silnecekid = silnecekid;
+	public void setSilinecekid(int silinecekid) {
+		this.silinecekid = silinecekid;
 	}
 
 	public tblCatDAO getDb() {

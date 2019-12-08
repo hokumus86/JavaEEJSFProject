@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import dao.tblUrunDAO;
+import model.tblcategori;
 import model.tblurun;
 
 
@@ -37,14 +38,18 @@ public class UrunBean {
 		urun_dao.kaydet(model);
 	}
 	
-	public void sil() {
+public void sil() {
+		
+		if(silinecekid!=0) {
+			//db.(silinecekid);	
+			tblurun u = new tblurun();
+			u.setId(silinecekid);
+			urun_dao.sil(u);
+		}
 		
 	}
 	
-	
-	
-	
-	
+
 	public List<tblurun> getUrunList() {
 		return urun_dao.listele(new tblurun());
 	}
@@ -57,7 +62,6 @@ public class UrunBean {
 	public void setUrun_dao(tblUrunDAO urun_dao) {
 		this.urun_dao = urun_dao;
 	}
-
 
 	public String getUrunAdi() {
 		return urunAdi;

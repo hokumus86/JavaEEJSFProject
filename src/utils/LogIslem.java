@@ -37,9 +37,27 @@ public class LogIslem {
           dosyayakaydet(t);
         }
         
-    }
-    
-    // kaydet method sonu.
+    }    // kaydet method sonu.
+        
+
+	public void dbsil(logtbl t) {
+		 ss = hbUtil.getSessionFactory().openSession();
+	        
+	        try{
+	        
+	            if(ss.isConnected()){
+	              dbsil(t);
+	            }
+	            else{
+	              dosyayakaydet(t);
+	            }
+	            
+	        }catch(Exception ex){
+	          dosyayakaydet(t);
+	        }
+		
+	} //Silme metodu sonu
+	
     
     private void dbkaydet(logtbl t){
         Transaction tt = ss.beginTransaction();
@@ -68,6 +86,6 @@ public class LogIslem {
         }
     
     }
-
+   
 }// class sonu
 
